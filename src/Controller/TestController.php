@@ -23,6 +23,7 @@ class TestController
 
     /**
      * @Route("/news/{harchi}")
+     * @Parameter harchi
      */
     public function show($harchi){
         return new Response("harchi ".$harchi);
