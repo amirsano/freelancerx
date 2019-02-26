@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ name }}{% endblock %}
+
+{% block body %}
+
+<i> {{ Beruf }}</i> und dein Satz {{ satz }}
+
+<ul>
+
+    {% for comment in comments %}
+        <li>{{ comment }}</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

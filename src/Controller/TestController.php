@@ -9,10 +9,11 @@
 namespace App\Controller;
 
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TestController
+class TestController extends AbstractController
 {
     /**
      * @Route("/")
@@ -23,10 +24,23 @@ class TestController
 
     /**
      * @Route("/news/{harchi}")
-     * @Parameter harchi
+     *
      */
     public function show($harchi){
-        return new Response("harchi ".$harchi);
+
+        $comments = [
+            'dkfhs hkjhkff',
+            'skdjfjsg jfgjsgjhfgj sf',
+            'sjdfgsgfjsbdjfsjdfjsgjdhgfjhsgjdf'
+        ];
+        return $this->render ('test/show.html.twig', [
+            'name' => 'amir',
+            'Beruf' => 'IT',
+            'satz' => $harchi,
+            'comments' => $comments,
+        ]);
+
+
     }
 
 }
