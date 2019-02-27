@@ -2,16 +2,24 @@
 
 {% block title %}{{ name }}{% endblock %}
 
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
 {% block body %}
 
 <i> {{ Beruf }}</i> und dein Satz {{ satz }}
 
-<ul>
+        anzahl {{ comments|length }}
 
+        <ul>
     {% for comment in comments %}
         <li>{{ comment }}</li>
 
     {% endfor %}
 </ul>
+
+        <a href="{{ path('showmal', {harchi: 'fkjsf'} , {chichi: 'ggg'}) }}"> Lnk</a>
+
 
 {% endblock %}

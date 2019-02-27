@@ -16,27 +16,31 @@ use Symfony\Component\Routing\Annotation\Route;
 class TestController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="xxx")
      */
     public function index() {
         return new Response("Hi");
     }
 
     /**
-     * @Route("/news/{harchi}")
+     * @Route("/news/{harchi}/{chichi}", name="showmal")
      *
      */
-    public function show($harchi){
+    public function show($harchi, $chichi){
 
         $comments = [
             'dkfhs hkjhkff',
             'skdjfjsg jfgjsgjhfgj sf',
             'sjdfgsgfjsbdjfsjdfjsgjdhgfjhsgjdf'
         ];
+
+        //dump($harchi, $this);
+
         return $this->render ('test/show.html.twig', [
             'name' => 'amir',
             'Beruf' => 'IT',
             'satz' => $harchi,
+            'satz2' => $chichi,
             'comments' => $comments,
         ]);
 
